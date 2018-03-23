@@ -1,0 +1,78 @@
+<!Doctype HTML>
+<html>
+<head>
+<title>Introduction</title>
+</head>
+    <style>
+        pre.prettyprint notranslate tryit prettyprinted{
+            border: 2px solid black;
+        }
+    </style>
+<body>
+
+<hr />
+<h1>HTML Lists</h1><p>HTML offers web authors three ways  for specifying lists of information. All lists must contain one or more list elements. Lists may contain:</p><ul class="list">
+<li><b>&lt;ul&gt;</b> - An unordered list. This will list items using plain bullets.</li>
+<li><b>&lt;ol&gt;</b> - An ordered list. This will use different schemes of numbers to list your items.</li>
+<li><b>&lt;dl&gt;</b> - A definition list. This arranges your items in the same way as they are arranged in a dictionary.</li>
+</ul><h2>HTML Unordered Lists</h2><p>An unordered list is a collection of related items that have no special order or sequence. This list is created by using HTML <b>&lt;ul&gt;</b> tag. Each item in the list is marked with a bullet.</p><h3>Example</h3><pre class="prettyprint notranslate tryit prettyprinted" style="cursor: default;"><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln">
+</span><span class="tag">&lt;html&gt;</span><span class="pln">
+</span><span class="tag">&lt;head&gt;</span><span class="pln">
+</span><span class="tag">&lt;title&gt;</span><span class="pln">HTML Unordered List</span><span class="tag">&lt;/title&gt;</span><span class="pln">
+</span><span class="tag">&lt;/head&gt;</span><span class="pln">
+</span><span class="tag">&lt;body&gt;</span><span class="pln">
+</span><span class="tag">&lt;ul&gt;</span><span class="pln">
+</span><span class="tag">&lt;li&gt;</span><span class="pln">Beetroot</span><span class="tag">&lt;/li&gt;</span><span class="pln">
+</span><span class="tag">&lt;li&gt;</span><span class="pln">Ginger</span><span class="tag">&lt;/li&gt;</span><span class="pln">
+</span><span class="tag">&lt;li&gt;</span><span class="pln">Potato</span><span class="tag">&lt;/li&gt;</span><span class="pln">
+</span><span class="tag">&lt;li&gt;</span><span class="pln">Radish</span><span class="tag">&lt;/li&gt;</span><span class="pln">
+</span><span class="tag">&lt;/ul&gt;</span><span class="pln">
+</span><span class="tag">&lt;/body&gt;</span><span class="pln">
+</span><span class="tag">&lt;/html&gt;</span></pre><p>This will produce following result:</p><div class="result notranslate">
+<ul>
+<li>Beetroot</li>
+<li>Ginger</li>
+<li>Potato</li>
+<li>Radish</li>
+</ul>
+</div><h2>HTML Ordered Lists</h2><p>If you are required to put your items in a numbered list instead of bulleted then HTML ordered list will be used. This list is created by using <b>&lt;ol&gt;</b> tag. The numbering starts at one and is incremented by one for each successive ordered list element tagged with &lt;li&gt;.</p><h3>Example</h3><pre class="prettyprint notranslate tryit prettyprinted"><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln">
+</span><span class="tag">&lt;html&gt;</span><span class="pln">
+</span><span class="tag">&lt;head&gt;</span><span class="pln">
+</span><span class="tag">&lt;title&gt;</span><span class="pln">HTML Ordered List</span><span class="tag">&lt;/title&gt;</span><span class="pln">
+</span><span class="tag">&lt;/head&gt;</span><span class="pln">
+</span><span class="tag">&lt;body&gt;</span><span class="pln">
+</span><span class="tag">&lt;ol&gt;</span><span class="pln">
+</span><span class="tag">&lt;li&gt;</span><span class="pln">Beetroot</span><span class="tag">&lt;/li&gt;</span><span class="pln">
+</span><span class="tag">&lt;li&gt;</span><span class="pln">Ginger</span><span class="tag">&lt;/li&gt;</span><span class="pln">
+</span><span class="tag">&lt;li&gt;</span><span class="pln">Potato</span><span class="tag">&lt;/li&gt;</span><span class="pln">
+</span><span class="tag">&lt;li&gt;</span><span class="pln">Radish</span><span class="tag">&lt;/li&gt;</span><span class="pln">
+</span><span class="tag">&lt;/ol&gt;</span><span class="pln">
+</span><span class="tag">&lt;/body&gt;</span><span class="pln">
+</span><span class="tag">&lt;/html&gt;</span></pre><p>This will produce following result:</p><div class="result notranslate">
+<ol>
+<li>Beetroot</li>
+<li>Ginger</li>
+<li>Potato</li>
+<li>Radish</li>
+</ol>
+</div><h2>HTML Definition Lists</h2><p>HTML and XHTML support a list style which is called <b>definition lists</b> where entries are listed like in a dictionary or encyclopedia. The definition list is the ideal way to present a glossary, list of terms, or other name/value list.</p><p>Definition List makes use of following three tags.</p><ul class="list">
+<li>&lt;dl&gt; - Defines the start of the list</li>
+<li>&lt;dt&gt; - A term</li>
+<li>&lt;dd&gt; - Term definition</li>
+<li>&lt;/dl&gt; - Defines the end of the list</li>
+</ul><h3>Example</h3><pre class="prettyprint notranslate tryit prettyprinted" style="cursor: pointer;"><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln">
+</span><span class="tag">&lt;html&gt;</span><span class="pln">
+</span><span class="tag">&lt;head&gt;</span><span class="pln">
+</span><span class="tag">&lt;title&gt;</span><span class="pln">HTML Definition List</span><span class="tag">&lt;/title&gt;</span><span class="pln">
+</span><span class="tag">&lt;/head&gt;</span><span class="pln">
+</span><span class="tag">&lt;body&gt;</span><span class="pln">
+</span><span class="tag">&lt;dl&gt;</span><span class="pln">
+</span><span class="tag">&lt;dt&gt;&lt;b&gt;</span><span class="pln">HTML</span><span class="tag">&lt;/b&gt;&lt;/dt&gt;</span><span class="pln">
+</span><span class="tag">&lt;dd&gt;</span><span class="pln">This stands for Hyper Text Markup Language</span><span class="tag">&lt;/dd&gt;</span><span class="pln">
+</span><span class="tag">&lt;dt&gt;&lt;b&gt;</span><span class="pln">HTTP</span><span class="tag">&lt;/b&gt;&lt;/dt&gt;</span><span class="pln">
+</span><span class="tag">&lt;dd&gt;</span><span class="pln">This stands for Hyper Text Transfer Protocol</span><span class="tag">&lt;/dd&gt;</span><span class="pln">
+</span><span class="tag">&lt;/dl&gt;</span><span class="pln">
+</span><span class="tag">&lt;/body&gt;</span><span class="pln">
+</span><span class="tag">&lt;/html&gt;</span></pre><p>This will produce following result:</p>
+</body>
+</html>

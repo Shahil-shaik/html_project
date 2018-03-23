@@ -1,0 +1,85 @@
+<!Doctype HTML>
+<html>
+<head>
+<title>Introduction</title>
+</head>
+<body>
+<h1> Introduction</h1>
+<hr />
+<h1>C - Strings</h1>
+    <p>Strings are actually one-dimensional array of characters terminated by a <b>null</b> character '\0'. Thus a null-terminated string contains the characters that comprise the string followed by a <b>null</b>.</p><p>The following declaration and initialization create a string consisting of the word "Hello". To hold the null character at the end of the array, the size of the character array containing the string is one more than the number of characters in the word "Hello."</p><pre class="result notranslate">char greeting[6] = {'H', 'e', 'l', 'l', 'o', '\0'};
+</pre><p>If you follow the rule of array initialization then you can write the above statement as follows −</p><pre class="result notranslate">char greeting[] = "Hello";
+</pre><p>Following is the memory presentation of the above defined string in C/C++ −</p><img src="/cprogramming/images/string_representation.jpg" alt="String Presentation in C/C++"><p>Actually, you do not place the <i>null</i> character at the end of a string constant. The C compiler automatically places the '\0' at the end of the string when it initializes the array. Let us try to print the above mentioned string −</p><pre class="prettyprint notranslate tryit prettyprinted" style="cursor: default;"><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;stdio.h&gt;</span><span class="pln">
+
+</span><span class="kwd">int</span><span class="pln"> main </span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+   </span><span class="kwd">char</span><span class="pln"> greeting</span><span class="pun">[</span><span class="lit">6</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="str">'H'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'e'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'l'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'l'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'o'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'\0'</span><span class="pun">};</span><span class="pln">
+   printf</span><span class="pun">(</span><span class="str">"Greeting message: %s\n"</span><span class="pun">,</span><span class="pln"> greeting </span><span class="pun">);</span><span class="pln">
+   </span><span class="kwd">return</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></pre><p>When the above code is compiled and executed, it produces the following result −</p><table class="table table-bordered">
+<tbody><tr>
+<th style="width:5%">S.N.</th>
+<th style="text-align:center;">Function &amp; Purpose</th>
+</tr>
+<tr>
+<td>1</td>
+<td><p><b>strcpy(s1, s2);</b></p>
+<p>Copies string s2 into string s1.</p>
+</td>
+</tr>
+<tr>
+<td>2</td>
+<td><p><b>strcat(s1, s2);</b></p>
+<p>Concatenates string s2 onto the end of string s1.</p>
+</td>
+</tr>
+<tr>
+<td>3</td>
+<td><p><b>strlen(s1);</b></p>
+<p>Returns the length of string s1.</p>
+</td>
+</tr>
+<tr>
+<td>4</td>
+<td><p><b>strcmp(s1, s2);</b></p>
+<p>Returns 0 if s1 and s2 are the same; less than 0 if s1&lt;s2; greater than 0 if s1&gt;s2.</p>
+</td>
+</tr>
+<tr>
+<td>5</td>
+<td><p><b>strchr(s1, ch);</b></p>
+<p>Returns a pointer to the first occurrence of character ch in string s1.</p>
+</td>
+</tr>
+<tr>
+<td>6</td>
+<td><p><b>strstr(s1, s2);</b></p>
+<p>Returns a pointer to the first occurrence of string s2 in string s1.</p>
+</td>
+</tr>
+</tbody></table><pre class="prettyprint notranslate tryit prettyprinted" style="cursor: default;"><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;stdio.h&gt;</span><span class="pln">
+</span><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;string.h&gt;</span><span class="pln">
+
+</span><span class="kwd">int</span><span class="pln"> main </span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+   </span><span class="kwd">char</span><span class="pln"> str1</span><span class="pun">[</span><span class="lit">12</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="str">"Hello"</span><span class="pun">;</span><span class="pln">
+   </span><span class="kwd">char</span><span class="pln"> str2</span><span class="pun">[</span><span class="lit">12</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="str">"World"</span><span class="pun">;</span><span class="pln">
+   </span><span class="kwd">char</span><span class="pln"> str3</span><span class="pun">[</span><span class="lit">12</span><span class="pun">];</span><span class="pln">
+   </span><span class="kwd">int</span><span class="pln">  len </span><span class="pun">;</span><span class="pln">
+
+   </span><span class="com">/* copy str1 into str3 */</span><span class="pln">
+   strcpy</span><span class="pun">(</span><span class="pln">str3</span><span class="pun">,</span><span class="pln"> str1</span><span class="pun">);</span><span class="pln">
+   printf</span><span class="pun">(</span><span class="str">"strcpy( str3, str1) :  %s\n"</span><span class="pun">,</span><span class="pln"> str3 </span><span class="pun">);</span><span class="pln">
+
+   </span><span class="com">/* concatenates str1 and str2 */</span><span class="pln">
+   strcat</span><span class="pun">(</span><span class="pln"> str1</span><span class="pun">,</span><span class="pln"> str2</span><span class="pun">);</span><span class="pln">
+   printf</span><span class="pun">(</span><span class="str">"strcat( str1, str2):   %s\n"</span><span class="pun">,</span><span class="pln"> str1 </span><span class="pun">);</span><span class="pln">
+
+   </span><span class="com">/* total lenghth of str1 after concatenation */</span><span class="pln">
+   len </span><span class="pun">=</span><span class="pln"> strlen</span><span class="pun">(</span><span class="pln">str1</span><span class="pun">);</span><span class="pln">
+   printf</span><span class="pun">(</span><span class="str">"strlen(str1) :  %d\n"</span><span class="pun">,</span><span class="pln"> len </span><span class="pun">);</span><span class="pln">
+
+   </span><span class="kwd">return</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></pre>
+</body>
+</html>

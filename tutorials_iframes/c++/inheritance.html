@@ -1,0 +1,136 @@
+<!Doctype HTML>
+<html>
+<head>
+<title>Introduction</title>
+</head>
+<body>
+
+<hr />
+<h1>C++ Inheritance</h1><p>One of the most important concepts in object-oriented programming is that of inheritance. Inheritance allows us to define a class in terms of another class, which makes it easier to create and maintain an application. This also provides an opportunity to reuse the code functionality and fast implementation time.</p><p>When creating a class, instead of writing completely new data members and member functions, the programmer can designate that the new class should inherit the members of an existing class. This existing class is called the <b>base</b> class, and the new class is referred to as the <b>derived</b> class.</p><p>The idea of inheritance implements the <b>is a</b> relationship. For example, mammal IS-A animal, dog IS-A mammal hence dog IS-A animal as well and so on.</p><h2>Base &amp; Derived Classes</h2><p>A class can be derived from more than one classes, which means it can inherit data and functions from multiple base classes. To define a derived class, we use a class derivation list to specify the base class(es). A class derivation list names one or more base classes and has the form:</p><pre class="result notranslate">class derived-class: access-specifier base-class
+</pre><p>Where access-specifier is one of <b>public, protected,</b> or <b>private</b>, and base-class is the name of a previously defined class. If the access-specifier is not used, then it is private by default.</p><p>Consider a base class <b>Shape</b> and its derived class <b>Rectangle</b> as follows:</p><pre class="prettyprint notranslate tryit prettyprinted" style="cursor: default;"><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;iostream&gt;</span><span class="pln">
+ 
+</span><span class="kwd">using</span><span class="pln"> </span><span class="kwd">namespace</span><span class="pln"> std</span><span class="pun">;</span><span class="pln">
+
+</span><span class="com">// Base class</span><span class="pln">
+</span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Shape</span><span class="pln">  </span><span class="pun">{</span><span class="pln">
+   </span><span class="kwd">public</span><span class="pun">:</span><span class="pln">
+      </span><span class="kwd">void</span><span class="pln"> setWidth</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> w</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+         width </span><span class="pun">=</span><span class="pln"> w</span><span class="pun">;</span><span class="pln">
+      </span><span class="pun">}</span><span class="pln">
+		
+      </span><span class="kwd">void</span><span class="pln"> setHeight</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> h</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+         height </span><span class="pun">=</span><span class="pln"> h</span><span class="pun">;</span><span class="pln">
+      </span><span class="pun">}</span><span class="pln">
+		
+   </span><span class="kwd">protected</span><span class="pun">:</span><span class="pln">
+      </span><span class="kwd">int</span><span class="pln"> width</span><span class="pun">;</span><span class="pln">
+      </span><span class="kwd">int</span><span class="pln"> height</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">};</span><span class="pln">
+
+</span><span class="com">// Derived class</span><span class="pln">
+</span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Rectangle</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">Shape</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+   </span><span class="kwd">public</span><span class="pun">:</span><span class="pln">
+      </span><span class="kwd">int</span><span class="pln"> getArea</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> 
+         </span><span class="kwd">return</span><span class="pln"> </span><span class="pun">(</span><span class="pln">width </span><span class="pun">*</span><span class="pln"> height</span><span class="pun">);</span><span class="pln"> 
+      </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">};</span><span class="pln">
+
+</span><span class="kwd">int</span><span class="pln"> main</span><span class="pun">(</span><span class="kwd">void</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+   </span><span class="typ">Rectangle</span><span class="pln"> </span><span class="typ">Rect</span><span class="pun">;</span><span class="pln">
+ 
+   </span><span class="typ">Rect</span><span class="pun">.</span><span class="pln">setWidth</span><span class="pun">(</span><span class="lit">5</span><span class="pun">);</span><span class="pln">
+   </span><span class="typ">Rect</span><span class="pun">.</span><span class="pln">setHeight</span><span class="pun">(</span><span class="lit">7</span><span class="pun">);</span><span class="pln">
+
+   </span><span class="com">// Print the area of the object.</span><span class="pln">
+   cout </span><span class="pun">&lt;&lt;</span><span class="pln"> </span><span class="str">"Total area: "</span><span class="pln"> </span><span class="pun">&lt;&lt;</span><span class="pln"> </span><span class="typ">Rect</span><span class="pun">.</span><span class="pln">getArea</span><span class="pun">()</span><span class="pln"> </span><span class="pun">&lt;&lt;</span><span class="pln"> endl</span><span class="pun">;</span><span class="pln">
+
+   </span><span class="kwd">return</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></pre><p>When the above code is compiled and executed, it produces the following result:</p><pre class="result notranslate">Total area: 35
+</pre><h2>Access Control and Inheritance</h2><p>A derived class can access all the non-private members of its base class. Thus base-class members that should not be accessible to the member functions of derived classes should be declared private in the base class.</p><p>We can summarize the different access types according to who can access them in the following way: </p><table class="table table-bordered">
+<tbody><tr>
+<th width="25%">Access</th>
+<th width="25%">public</th>
+<th width="25%">protected</th>
+<th width="25%">private</th>
+</tr>
+<tr>
+<td>Same class</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Derived classes</td>
+<td>yes</td>
+<td>yes</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Outside classes</td>
+<td>yes</td>
+<td>no</td>
+<td>no</td>
+</tr>
+</tbody></table><ul class="list">
+<li><p>Constructors, destructors and copy constructors of the base class.</p></li>
+<li><p>Overloaded operators of the base class.</p></li>
+<li><p>The friend functions of the base class.</p></li>
+</ul><h2>Type of Inheritance</h2><p>When deriving a class from a base class, the base class may be inherited through <b>public, protected</b> or <b> private</b> inheritance. The type of inheritance is specified by the access-specifier as explained above.</p><p>We hardly use <b>protected</b> or <b> private</b> inheritance, but <b>public</b> inheritance is commonly used. While using different type of inheritance, following rules are applied:</p><ul class="list">
+<li><p><b>Public Inheritance:</b> When deriving a class from a <b>public</b> base class, <b>public</b> members of the base class become <b>public</b> members of the derived class and <b>protected</b> members of the base class become <b>protected</b> members of the derived class. A base class's <b>private</b> members are never accessible directly from a derived class, but can be accessed through calls to the <b>public</b> and <b>protected</b> members of the base class.</p></li>
+<li><p><b>Protected Inheritance:</b>  When deriving from a <b>protected</b> base class, <b>public</b> and <b>protected </b> members of the base class become <b>protected</b> members of the derived class.</p></li>
+<li><p><b>Private Inheritance:</b> When deriving from a <b>private</b> base class, <b>public</b> and <b>protected</b> members of the base class become <b>private</b> members of the derived class.</p></li>
+</ul><h2>Multiple Inheritances</h2><p>A C++ class can inherit members from more than one class and here is the extended syntax:</p><p>Where access is one of <b>public, protected,</b> or <b>private</b> and would be given for every base class and they will be separated by comma as shown above. Let us try the following example:</p><pre class="prettyprint notranslate prettyprinted"><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;iostream&gt;</span><span class="pln">
+ 
+</span><span class="kwd">using</span><span class="pln"> </span><span class="kwd">namespace</span><span class="pln"> std</span><span class="pun">;</span><span class="pln">
+
+</span><span class="com">// Base class Shape</span><span class="pln">
+</span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Shape</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+   </span><span class="kwd">public</span><span class="pun">:</span><span class="pln">
+      </span><span class="kwd">void</span><span class="pln"> setWidth</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> w</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+         width </span><span class="pun">=</span><span class="pln"> w</span><span class="pun">;</span><span class="pln">
+      </span><span class="pun">}</span><span class="pln">
+		
+      </span><span class="kwd">void</span><span class="pln"> setHeight</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> h</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+         height </span><span class="pun">=</span><span class="pln"> h</span><span class="pun">;</span><span class="pln">
+      </span><span class="pun">}</span><span class="pln">
+		
+   </span><span class="kwd">protected</span><span class="pun">:</span><span class="pln">
+      </span><span class="kwd">int</span><span class="pln"> width</span><span class="pun">;</span><span class="pln">
+      </span><span class="kwd">int</span><span class="pln"> height</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">};</span><span class="pln">
+
+</span><span class="com">// Base class PaintCost</span><span class="pln">
+</span><span class="kwd">class</span><span class="pln"> </span><span class="typ">PaintCost</span><span class="pln">  </span><span class="pun">{</span><span class="pln">
+   </span><span class="kwd">public</span><span class="pun">:</span><span class="pln">
+      </span><span class="kwd">int</span><span class="pln"> getCost</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> area</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+         </span><span class="kwd">return</span><span class="pln"> area </span><span class="pun">*</span><span class="pln"> </span><span class="lit">70</span><span class="pun">;</span><span class="pln">
+      </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">};</span><span class="pln">
+
+</span><span class="com">// Derived class</span><span class="pln">
+</span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Rectangle</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">Shape</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">PaintCost</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+   </span><span class="kwd">public</span><span class="pun">:</span><span class="pln">
+      </span><span class="kwd">int</span><span class="pln"> getArea</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> 
+         </span><span class="kwd">return</span><span class="pln"> </span><span class="pun">(</span><span class="pln">width </span><span class="pun">*</span><span class="pln"> height</span><span class="pun">);</span><span class="pln"> 
+      </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">};</span><span class="pln">
+
+</span><span class="kwd">int</span><span class="pln"> main</span><span class="pun">(</span><span class="kwd">void</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+   </span><span class="typ">Rectangle</span><span class="pln"> </span><span class="typ">Rect</span><span class="pun">;</span><span class="pln">
+   </span><span class="kwd">int</span><span class="pln"> area</span><span class="pun">;</span><span class="pln">
+ 
+   </span><span class="typ">Rect</span><span class="pun">.</span><span class="pln">setWidth</span><span class="pun">(</span><span class="lit">5</span><span class="pun">);</span><span class="pln">
+   </span><span class="typ">Rect</span><span class="pun">.</span><span class="pln">setHeight</span><span class="pun">(</span><span class="lit">7</span><span class="pun">);</span><span class="pln">
+
+   area </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Rect</span><span class="pun">.</span><span class="pln">getArea</span><span class="pun">();</span><span class="pln">
+   
+   </span><span class="com">// Print the area of the object.</span><span class="pln">
+   cout </span><span class="pun">&lt;&lt;</span><span class="pln"> </span><span class="str">"Total area: "</span><span class="pln"> </span><span class="pun">&lt;&lt;</span><span class="pln"> </span><span class="typ">Rect</span><span class="pun">.</span><span class="pln">getArea</span><span class="pun">()</span><span class="pln"> </span><span class="pun">&lt;&lt;</span><span class="pln"> endl</span><span class="pun">;</span><span class="pln">
+
+   </span><span class="com">// Print the total cost of painting</span><span class="pln">
+   cout </span><span class="pun">&lt;&lt;</span><span class="pln"> </span><span class="str">"Total paint cost: $"</span><span class="pln"> </span><span class="pun">&lt;&lt;</span><span class="pln"> </span><span class="typ">Rect</span><span class="pun">.</span><span class="pln">getCost</span><span class="pun">(</span><span class="pln">area</span><span class="pun">)</span><span class="pln"> </span><span class="pun">&lt;&lt;</span><span class="pln"> endl</span><span class="pun">;</span><span class="pln">
+
+   </span><span class="kwd">return</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></pre>
+</body>
+</html>
